@@ -1,346 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Vision & Pattern Recognition - USI</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9fafb;
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            margin: 4rem 0;
-        }
-
-        section h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #1a202c;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 0.5rem;
-            display: inline-block;
-        }
-
-        .course-overview {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-            margin-bottom: 3rem;
-        }
-
-        .course-overview-content h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .course-overview-content p {
-            margin-bottom: 1rem;
-            color: #555;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-
-        .info-item {
-            border-left: 4px solid #667eea;
-            padding-left: 1rem;
-        }
-
-        .info-item strong {
-            display: block;
-            color: #667eea;
-            margin-bottom: 0.3rem;
-        }
-
-        .info-item span {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-            font-weight: 700;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-content h3 {
-            color: #1a202c;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .project-content p {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .add-project-card {
-            background: white;
-            border-radius: 8px;
-            border: 2px dashed #667eea;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 400px;
-            text-align: center;
-            padding: 2rem;
-            flex-direction: column;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .add-project-card:hover {
-            background-color: #f0f4ff;
-        }
-
-        .add-project-card p {
-            color: #667eea;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .add-project-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            background-color: #2d3748;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-        }
-
-        .instructor-info {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            margin-bottom: 1rem;
-        }
-
-        .instructor-info strong {
-            color: #667eea;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            .course-overview {
-                grid-template-columns: 1fr;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project ideas for the USI Computer Vision &amp; Pattern Recognition course, Spring 2026.">
+  <title>Computer Vision &amp; Pattern Recognition | USI</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Computer Vision & Pattern Recognition</h1>
-        <p>Master's Lecture at Università della Svizzera italiana (USI)</p>
-    </header>
-
-    <div class="container">
-        <!-- Course Overview Section -->
-        <section id="about">
-            <h2>About the Course</h2>
-            <div class="course-overview">
-                <div class="course-overview-content">
-                    <h3>Bridging Classic and Modern Vision</h3>
-                    <p>
-                        Machine learning has profoundly transformed computer vision, yet modern methods have deep roots in the field's history. This comprehensive lecture explores these foundations while fully incorporating the latest deep learning advances.
-                    </p>
-                    <p>
-                        Taking a holistic approach that goes beyond machine learning, we address fundamental issues in the task of vision and the critical relationship of machine vision to human perception, covering a wide range of fundamental and modern computer vision topics.
-                    </p>
-                </div>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <strong>Instructor</strong>
-                        <span>Francis Engelmann</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Assistant</strong>
-                        <span>Nicolai Hermann</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Credits</strong>
-                        <span>6.0 ECTS</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Term</strong>
-                        <span>Spring 2025-2026</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Language</strong>
-                        <span>English</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Location</strong>
-                        <span>Lugano, Switzerland</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Learning Objectives Section -->
-        <section id="objectives">
-            <h2>Learning Objectives</h2>
-            <p style="font-size: 1.05rem; color: #555; margin-bottom: 1.5rem;">
-                By the end of this course, you will be able to:
-            </p>
-            <ul style="margin-left: 2rem; color: #555; line-height: 2;">
-                <li>Understand the historical foundations and modern advances in computer vision</li>
-                <li>Connect classical computer vision methods with contemporary deep learning approaches</li>
-                <li>Address fundamental issues in vision and human perception</li>
-                <li>Master next-generation topics including transformers and diffusion models</li>
-                <li>Apply computer vision techniques to real-world problems</li>
-            </ul>
-        </section>
-
-        <!-- Course Structure Section -->
-        <section id="structure">
-            <h2>Course Structure</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <strong>Teaching Mode</strong>
-                    <span>In-person lectures and tutorials</span>
-                </div>
-                <div class="info-item">
-                    <strong>Assessment</strong>
-                    <span>Homework assignments, project work, and final exam</span>
-                </div>
-                <div class="info-item">
-                    <strong>Textbook</strong>
-                    <span>"Foundations of Computer Vision" by Torralba, Isola & Freeman (MIT Press, 2024)</span>
-                </div>
-                <div class="info-item">
-                    <strong>Format</strong>
-                    <span>Lectures, tutorials, and hands-on assignments</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Project Ideas Section -->
-        <section id="projects">
-            <h2>Student Project Ideas</h2>
-            <p style="color: #666; margin-bottom: 2rem;">
-                Below are project ideas from students in the course. Interested in proposing your own? Create a pull request with your project idea following the format of the example below.
-            </p>
-
-            <div class="projects-container">
-                <!-- Dummy Project Card -->
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        🎬
-                    </div>
-                    <div class="project-content">
-                        <h3>Real-time Video Object Tracking</h3>
-                        <p>
-                            This project implements a state-of-the-art object tracking system that operates in real-time on video streams. By combining deep feature extraction with efficient tracking algorithms, we aim to build a robust system capable of tracking multiple objects simultaneously while maintaining high frame rates. The system will handle occlusions and scale variations common in real-world scenarios, with applications in surveillance, sports analytics, and autonomous systems.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Add New Project Card -->
-                <div class="add-project-card">
-                    <div class="icon">+</div>
-                    <p><strong>Add Your Project Idea</strong></p>
-                    <p style="color: #999; font-size: 0.9rem;">Create a pull request to contribute your project idea to this page</p>
-                </div>
-            </div>
-        </section>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="brand">USI Computer Vision 2026</div>
+    <div class="nav-links">
+      <a href="#course">Course</a>
+      <a href="#projects">Projects</a>
+      <a href="https://github.com/Computer-Vision-2026" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://search.usi.ch/courses/35275471/computer-vision-pattern-recognition" target="_blank" rel="noopener">Official profile</a>
     </div>
+  </nav>
 
-    <footer>
-        <p>&copy; 2026 Computer Vision & Pattern Recognition Course, USI</p>
-        <p style="font-size: 0.9rem; margin-top: 1rem;">Università della Svizzera italiana • Lugano, Switzerland</p>
-    </footer>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Master-level lecture at Universita della Svizzera italiana</p>
+      <h1>Computer Vision</h1>
+      <p class="hero-copy">
+        A Spring 2026 course connecting the historical foundations of vision with modern deep learning,
+        transformers, and hands-on project work.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#projects">Browse project ideas</a>
+        <a class="button secondary" href="https://search.usi.ch/courses/35275471/computer-vision-pattern-recognition" target="_blank" rel="noopener">Course page</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="course">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Course At A Glance</h2>
+          <p>
+            The course introduces a broad, modern foundation in computer vision while keeping sight of the classical
+            ideas that still shape today's methods.
+          </p>
+        </div>
+
+        <div class="facts" aria-label="Course facts">
+          <div class="fact">
+            <strong>Semester</strong>
+            <span>Spring</span>
+          </div>
+          <div class="fact">
+            <strong>Academic Year</strong>
+            <span>2025-2026</span>
+          </div>
+          <div class="fact">
+            <strong>Credits</strong>
+            <span>6.0 ECTS</span>
+          </div>
+          <div class="fact">
+            <strong>Language</strong>
+            <span>English</span>
+          </div>
+          <div class="fact">
+            <strong>Mode</strong>
+            <span>In presence</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner about-grid">
+        <div class="about-copy">
+          <p>
+            Machine learning has profoundly changed computer vision, but the field's current methods build on a long
+            history of image formation, geometry, perception, recognition, and representation learning. This lecture
+            takes a holistic view of the task of vision.
+          </p>
+          <p>
+            Lectures and tutorials are accompanied by bi-weekly quizzes and project work. Assessment combines
+            bi-weekly quizzes, the project, and the final exam.
+          </p>
+          <div class="topic-list" aria-label="Course topics">
+            <span class="topic">Foundations of vision</span>
+            <span class="topic">Deep learning</span>
+            <span class="topic">Transformers</span>
+          </div>
+        </div>
+
+        <ul class="detail-list" aria-label="Course details">
+          <li>
+            <b>Instructor</b>
+            <span><a href="https://francisengelmann.github.io/" target="_blank" rel="noopener">Francis Engelmann</a></span>
+          </li>
+          <li>
+            <b>Assistant</b>
+            <span><a href="https://nihermann.github.io/" target="_blank" rel="noopener">Nicolai Hermann</a></span>
+          </li>
+          <li>
+            <b>Format</b>
+            <span>Lectures, tutorials, bi-weekly quizzes, project work, and final exam.</span>
+          </li>
+          <li>
+            <b>Bibliography</b>
+            <span><i>Foundations of Computer Vision</i>, Antonio Torralba, Phillip Isola, William T. Freeman, MIT Press, 2024.</span>
+          </li>
+          <li>
+            <b>Programs</b>
+            <span>MSc Artificial Intelligence, MSc Computational Science, MSc Informatics, and Faculty of Informatics PhD students.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="band" id="projects">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Student Project Ideas</h2>
+          <p>
+            Project proposals live here so classmates can quickly scan possible directions, compare ideas, and submit
+            additions by pull request.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Copy this article to add a new project idea. Keep the teaser visual and write a 60-90 word pitch. -->
+          <article class="project-card">
+            <div class="teaser" role="img" aria-label="Abstract computer vision teaser with image grid, camera frame, and detected regions.">
+              <span class="teaser-label">Example project idea</span>
+            </div>
+            <div class="project-content">
+              <p class="project-meta">Scene understanding, geometry, foundation models</p>
+              <h3>Semantic Change Maps from Everyday Walks</h3>
+              <p class="project-abstract">
+                Can a short phone video reveal how a campus route changes over time? This project combines monocular
+                depth, semantic segmentation, and feature matching to align walks recorded on different days, then
+                highlights moved objects, blocked paths, or new scene elements. The result would be a small visual demo
+                that connects 3D reasoning, human attention, and practical scene understanding for urban navigation.
+              </p>
+              <label class="project-toggle-label">
+                <input class="project-toggle" type="checkbox" aria-label="Toggle full project pitch">
+                <span class="project-toggle-more">Read more</span>
+                <span class="project-toggle-less">Show less</span>
+              </label>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="contribute">
+          <h3>Add Your Idea</h3>
+          <p>
+            Create a pull request that adds one project card with a teaser image, a short topic line, a title, and a
+            60-90 word pitch. Keep the card concise so the gallery stays easy to browse.
+          </p>
+          <p>
+            Start from the
+            <a class="text-link" href="https://github.com/Computer-Vision-2026" target="_blank" rel="noopener">Computer Vision 2026 GitHub organization</a>
+            or
+            <a class="text-link" href="https://github.com/Computer-Vision-2026/Computer-Vision-2026.github.io/edit/main/index.html" target="_blank" rel="noopener">edit this page on GitHub</a>
+            to propose your project card.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>Computer Vision &amp; Pattern Recognition, USI, Spring 2026</span>
+      <a href="https://github.com/Computer-Vision-2026" target="_blank" rel="noopener">GitHub organization</a>
+      <a href="https://search.usi.ch/courses/35275471/computer-vision-pattern-recognition" target="_blank" rel="noopener">Official course profile</a>
+    </div>
+  </footer>
 </body>
 </html>
